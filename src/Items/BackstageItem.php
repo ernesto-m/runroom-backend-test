@@ -6,12 +6,12 @@ namespace Runroom\GildedRose\Items;
 
 class BackstageItem extends Item
 {
-    public function __construct($name, $sell_in, $quality)
+    public function __construct(string $name, int $sell_in, int $quality)
     {
         parent::__construct($name, $sell_in, $quality);
     }
 
-    public function updateItem()
+    public function updateItem():void
     {
 
         if($this->sell_in <= 0) {
