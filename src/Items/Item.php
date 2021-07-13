@@ -55,8 +55,8 @@ abstract class Item
         return $this->sell_in < 0;
     }
 
-    protected function increaseQuality() {
+    protected function increaseQuality(int $amount_to_increase = 1) {
 
-        $this->quality = $this->quality + 1;
+        $this->quality = $this->quality + $amount_to_increase;
     }
 }
