@@ -28,9 +28,9 @@ class GildedRoseTest extends TestCase
      */
     public function itemsDegradeDoubleQualityOnceTheSellInDateHasPass()
     {
-  		$items = [new ItemOriginal('', -1, 5)];
+  		$items = [new GenericItem('', -1, 5)];
 
-  		$gilded_rose = new GildedRoseOriginal($items);
+  		$gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
 
   		$this->assertEquals(3, $items[0]->quality);
