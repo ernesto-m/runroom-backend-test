@@ -4,13 +4,13 @@ namespace Runroom\GildedRose;
 
 class GildedRose {
 
-    private $items;
+    private array $items;
 
-    function __construct($items) {
+    function __construct(array $items) {
         $this->items = $items;
     }
 
-    function update_quality() {
+    function update_quality(): void {
         foreach ($this->items as $item) {
             $item->updateItem();
         }
