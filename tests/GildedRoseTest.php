@@ -79,6 +79,19 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
+    public function agedBrieIncreasesSingleQualityIfSellInGreaterThanZero()
+    {
+        $items = [new AgedBrieItem('Aged Brie', 1, 5)];
+
+        $gilded_rose = new GildedRose($items);
+        $gilded_rose->update_quality();
+
+        $this->assertEquals(6, $items[0]->quality);
+    }
+
+    /**
+     * @test
+     */
     public function sulfurasDoesNotChange()
     {
   		$items = [new ItemOriginal('Sulfuras, Hand of Ragnaros', 10, 10)];
