@@ -14,7 +14,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsDegradeQuality()
+    public function itemsDegradeQuality():void
     {
         $items = [new GenericItem('', 1, 5)];
 
@@ -27,7 +27,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsDegradeDoubleQualityOnceTheSellInDateHasPass()
+    public function itemsDegradeDoubleQualityOnceTheSellInDateHasPass():void
     {
   		$items = [new GenericItem('', -1, 5)];
 
@@ -40,7 +40,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function itemsCannotHaveNegativeQuality()
+    public function itemsCannotHaveNegativeQuality():void
     {
   		$items = [new GenericItem('', 0, 0)];
 
@@ -53,7 +53,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function agedBrieIncreasesQualityOverTime()
+    public function agedBrieIncreasesQualityOverTime():void
     {
   		$items = [new AgedBrieItem('Aged Brie', 0, 5)];
 
@@ -66,7 +66,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function qualityCannotBeGreaterThan50()
+    public function qualityCannotBeGreaterThan50():void
     {
   		$items = [new AgedBrieItem('Aged Brie', 0, 50)];
 
@@ -79,7 +79,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function agedBrieIncreasesSingleQualityIfSellInGreaterThanZero()
+    public function agedBrieIncreasesSingleQualityIfSellInGreaterThanZero():void
     {
         $items = [new AgedBrieItem('Aged Brie', 1, 5)];
 
@@ -92,7 +92,7 @@ class GildedRoseTest extends TestCase
     /**
      * @test
      */
-    public function sulfurasDoesNotChange()
+    public function sulfurasDoesNotChange():void
     {
   		$items = [new SulfurasItem('Sulfuras, Hand of Ragnaros', 10, 10)];
 
@@ -103,7 +103,8 @@ class GildedRoseTest extends TestCase
   		$this->assertEquals(10, $items[0]->quality);
   	}
 
-    public static function backstageRules()
+
+    public static function backstageRules():array
     {
   		return [
   			'incr. 1 if sellIn > 10' => [11, 10, 11],
@@ -120,7 +121,7 @@ class GildedRoseTest extends TestCase
      * @dataProvider backstageRules
      * @test
      */
-    public function backstageQualityIncreaseOverTimeWithCertainRules($sellIn, $quality, $expected)
+    public function backstageQualityIncreaseOverTimeWithCertainRules(int $sellIn, int $quality, int $expected):void
     {
   		$items = [new BackstageItem('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
 
