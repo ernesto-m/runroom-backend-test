@@ -13,11 +13,12 @@ class BackstageItem extends Item
 
     public function updateItem()
     {
+
         if($this->sell_in <= 0) {
             $this->quality = 0;
-        }elseif ($this->sell_in > 0 && $this->sell_in <= 5) {
+        }elseif ($this->sell_in  <= 5) {
             $this->increaseQuality(3);
-        }elseif ($this->sell_in > 5 && $this->sell_in <= 10) {
+        }elseif ($this->sell_in  <= 10) {
             $this->increaseQuality(2);
         }else{
             $this->increaseQuality();
