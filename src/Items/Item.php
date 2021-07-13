@@ -25,7 +25,7 @@ abstract class Item
 
     protected function decreaseQuality() {
 
-        if($this->quality <= 0) {
+        if($this->checkIfIsMaxQuality()) {
             return;
         }
 
@@ -48,7 +48,7 @@ abstract class Item
     }
 
     protected function checkIfIsMinQuality() {
-        return $this->quality < 0;
+        return $this->quality <= 0;
     }
 
     protected function isSellInNegative() {
