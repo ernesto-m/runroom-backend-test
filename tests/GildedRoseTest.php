@@ -7,6 +7,7 @@ use Runroom\GildedRose\GildedRose;
 use Runroom\GildedRose\GildedRoseOriginal;
 use Runroom\GildedRose\ItemOriginal;
 use Runroom\GildedRose\Items\AgedBrieItem;
+use Runroom\GildedRose\Items\BackstageItem;
 use Runroom\GildedRose\Items\GenericItem;
 use Runroom\GildedRose\Items\SulfurasItem;
 
@@ -123,9 +124,9 @@ class GildedRoseTest extends TestCase
      */
     public function backstageQualityIncreaseOverTimeWithCertainRules($sellIn, $quality, $expected)
     {
-  		$items = [new ItemOriginal('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
+  		$items = [new BackstageItem('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality)];
 
-        $gilded_rose = new GildedRoseOriginal($items);
+        $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
 
   		$this->assertEquals($expected, $items[0]->quality);
