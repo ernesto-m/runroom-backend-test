@@ -25,7 +25,7 @@ abstract class Item
 
     protected function decreaseQuality() {
 
-        if($this->quality == 0) {
+        if($this->quality <= 0) {
             return;
         }
 
