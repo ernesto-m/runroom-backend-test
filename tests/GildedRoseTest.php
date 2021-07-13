@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Runroom\GildedRose\GildedRose;
 use Runroom\GildedRose\GildedRoseOriginal;
 use Runroom\GildedRose\ItemOriginal;
+use Runroom\GildedRose\Items\AgedBrieItem;
 use Runroom\GildedRose\Items\GenericItem;
 
 class GildedRoseTest extends TestCase
@@ -54,9 +55,9 @@ class GildedRoseTest extends TestCase
      */
     public function agedBrieIncreasesQualityOverTime()
     {
-  		$items = [new ItemOriginal('Aged Brie', 0, 5)];
+  		$items = [new AgedBrieItem('Aged Brie', 0, 5)];
 
-        $gilded_rose = new GildedRoseOriginal($items);
+        $gilded_rose = new GildedRose($items);
         $gilded_rose->update_quality();
 
   		$this->assertEquals(7, $items[0]->quality);

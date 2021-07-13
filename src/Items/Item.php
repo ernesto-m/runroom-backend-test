@@ -54,4 +54,9 @@ abstract class Item
     protected function isSellInNegative() {
         return $this->sell_in < 0;
     }
+
+    protected function increaseQuality() {
+
+        $this->quality = $this->quality + 1;
+    }
 }
