@@ -4,8 +4,6 @@ namespace Runroom\GildedRose\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Runroom\GildedRose\GildedRose;
-use Runroom\GildedRose\GildedRoseOriginal;
-use Runroom\GildedRose\ItemOriginal;
 use Runroom\GildedRose\Items\AgedBrieItem;
 use Runroom\GildedRose\Items\BackstageItem;
 use Runroom\GildedRose\Items\GenericItem;
