@@ -14,6 +14,6 @@ class GenericItem extends Item
 
     public function updateItem()
     {
-        $this->decreaseQuality();
+        $this->decreaseQuality(true);
     }
 }

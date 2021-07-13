@@ -23,7 +23,7 @@ abstract class Item
         return "{$this->name}, {$this->sell_in}, {$this->quality}";
     }
 
-    protected function decreaseQuality() {
+    protected function decreaseQuality(bool $double_when_sell_in_negative = false) {
 
         if($this->checkIfIsMaxQuality()) {
             return;
@@ -33,7 +33,7 @@ abstract class Item
 
         $this->decreaseSellIn();
 
-        if($this->sell_in < 0) {
+        if($double_when_sell_in_negative && $this->sell_in < 0) {
             $this->quality = $this->quality - 1;
         }
 
