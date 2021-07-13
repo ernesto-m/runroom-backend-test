@@ -25,7 +25,7 @@ abstract class Item
 
     protected function decreaseQuality(bool $double_when_sell_in_negative = false) {
 
-        if($this->checkIfIsMaxQuality()) {
+        if($this->checkIfIsMinQuality()) {
             return;
         }
 
