@@ -2,7 +2,7 @@
 
 namespace Runroom\GildedRose;
 
-class Item {
+class ItemOriginal {
 
     public $name;
     public $sell_in;
